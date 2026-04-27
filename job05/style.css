@@ -1,0 +1,18 @@
+/* Taille minimale du body à 4096px pour permettre un scroll significatif */
+body {
+  min-height: 4096px;
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer fixe en bas de la fenêtre, pleine largeur */
+footer {
+  position: fixed;       /* Reste en bas même quand on scrolle */
+  bottom: 0;
+  left: 0;
+  width: 100%;           /* Prend toute la largeur de la fenêtre */
+  height: 12px;          /* Hauteur de la barre de progression */
+  background-color: #e0e0e0; /* Couleur initiale (gris clair = 0%) */
+  transition: background-color 0.1s ease; /* Transition douce au scroll */
+}
