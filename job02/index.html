@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Job 02 — Arc-en-ciel</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 30px; background: #f9f9f9; }
+      h1   { margin-bottom: 20px; }
+
+      /* ─── Zone des images mélangées (source) ──────────────────────── */
+      #zone-melange {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 16px;
+        background: #fff;
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        min-height: 120px;
+        margin-bottom: 20px;
+      }
+
+      /* ─── Zone de reconstruction (destination) ─────────────────────── */
+      #zone-reconstruction {
+        display: flex;
+        gap: 10px;
+        padding: 16px;
+        background: #fff;
+        border: 2px solid #1919e6;
+        border-radius: 8px;
+        min-height: 120px;
+        margin-bottom: 20px;
+        align-items: center;
+      }
+
+      /* ─── Chaque image de l'arc-en-ciel ────────────────────────────── */
+      .arc-img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 3px solid transparent;
+        border-radius: 4px;
+        transition: border-color 0.2s, transform 0.15s;
+      }
+      .arc-img:hover          { border-color: #1919e6; transform: scale(1.05); }
+      .arc-img.selectionnee  { border-color: #e6a819; transform: scale(1.08); }
+
+      /* ─── Boutons ───────────────────────────────────────────────────── */
+      .btn-actions { display: flex; gap: 10px; margin-bottom: 20px; }
+      button {
+        padding: 10px 22px;
+        font-size: 14px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      #btn-melanger    { background: #1919e6; color: #fff; }
+      #btn-verifier    { background: #19a619; color: #fff; }
+      #btn-reinitialiser { background: #888; color: #fff; }
+
+      /* ─── Message résultat ──────────────────────────────────────────── */
+      #message {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 16px;
+        min-height: 36px;
+      }
+      .gagne { color: green; }
+      .perdu { color: red;   }
+
+      /* ─── Labels ────────────────────────────────────────────────────── */
+      .zone-label {
+        font-size: 13px;
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Job 02 — Puzzle Arc-en-ciel</h1>
+    <p>Cliquez sur une image dans la zone du bas pour la sélectionner, puis cliquez sur sa position dans la zone de reconstruction.</p>
+
+    <div class="btn-actions">
+      <button id="btn-melanger">🔀 Mélanger</button>
+      <button id="btn-verifier">✅ Vérifier l'ordre</button>
+      <button id="btn-reinitialiser">↩ Réinitialiser</button>
+    </div>
+
+    <!-- Zone de reconstruction : 6 emplacements numérotés -->
+    <div class="zone-label">Zone de reconstruction (glissez les images ici dans l'ordre 1→6)</div>
+    <div id="zone-reconstruction">
+      <!-- Les 6 slots de destination sont créés dynamiquement par script.js -->
+    </div>
+
+    <!-- Zone mélangée : les 6 images dans un ordre aléatoire -->
+    <div class="zone-label">Images mélangées (cliquez pour sélectionner)</div>
+    <div id="zone-melange">
+      <!-- Peuplé dynamiquement par script.js -->
+    </div>
+
+    <!-- Résultat affiché après vérification -->
+    <div id="message"></div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Job 04 — Input animé jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 60px 40px;
+        background: #f0f4ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1   { color: #1919e6; margin-bottom: 8px; }
+      p    { color: #555; margin-bottom: 36px; font-size: 14px; }
+
+      /*  Champ de recherche animé */
+      #champ-recherche {
+        
+        width: 200px;
+        padding: 12px 18px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 30px;      /* pill shape */
+        outline: none;
+        background: #fff;
+        color: #333;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      }
+
+      /* Style quand le champ a le focus — classe ajoutée par jQuery */
+      #champ-recherche.actif {
+        border-color: #1919e6;
+        box-shadow: 0 4px 16px rgba(25,25,230,0.15);
+      }
+
+      #etat {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #888;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Job 04 — Input animé avec jQuery</h1>
+    <p>Cliquez dans le champ pour l'agrandir. Cliquez en dehors pour le réduire.</p>
+
+    <!-- Le champ de texte dont la largeur est animée par jQuery -->
+    <input type="text" id="champ-recherche" placeholder="🔍 Rechercher…" />
+
+    <!-- Indicateur d'état pour mieux visualiser -->
+    <div id="etat">Champ inactif (200px)</div>
+  </body>
+</html>

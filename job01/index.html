@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Job 01 — Afficher / Cacher</title>
+    <!-- jQuery chargé depuis le CDN officiel -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 40px; }
+      #citation {
+        display: none;              /* cachée par défaut — jQuery l'affiche au clic */
+        margin: 20px 0;
+        padding: 20px;
+        border-left: 4px solid #1919e6;
+        background: #f0f4ff;
+        font-style: italic;
+        font-size: 18px;
+      }
+      button { margin: 8px; padding: 10px 20px; cursor: pointer; font-size: 14px; }
+      #btn-afficher { background: #1919e6; color: white; border: none; border-radius: 6px; }
+      #btn-cacher   { background: #e63333; color: white; border: none; border-radius: 6px; display: none; }
+    </style>
+  </head>
+  <body>
+    <h1>Job 01 — jQuery : Afficher / Cacher</h1>
+
+    
+    <button id="btn-afficher">Afficher la citation</button>
+
+    
+    <button id="btn-cacher">Cacher la citation</button>
+
+    
+    <p id="citation">
+      "Les logiciels et les cathédrales, c'est un peu la même chose -
+      d'abord, on les construit, ensuite, on prie."
+    </p>
+  </body>
+</html>
